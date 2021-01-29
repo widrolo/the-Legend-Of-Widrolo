@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using System.Threading; 
+using System.Threading;
 
 namespace Game.Character
 {
@@ -45,24 +45,31 @@ namespace Game.Character
 
         public static string Gender()
         {
-            string Rgender;
+            string gender = "default";
             string Fgender;
-            string gender;
+            bool isGood;
             Console.Write("Male or Female: ");
-            Rgender = (Console.ReadLine());
-            Fgender = Rgender.ToLower();
-            if (Fgender == "male")
+            Fgender = Console.ReadLine().ToLower();
+            do
             {
-                gender = "Male";
-            }
-            else if (Fgender == "female")
-            {
-                gender = "Female";
-            }
-            else
-            {
-                gender = "Unknown";
-            }
+                switch (Fgender)
+                {
+                    case "male":
+                        isGood = true;
+                        gender = "Male";
+                        break;
+
+                    case "female":
+                        isGood = true;
+                        gender = "Female";
+                        break;
+
+                    default:
+                        isGood = false;
+                        Console.WriteLine("Invalid answer");
+                        break;
+                }
+            } while (isGood == false);
 
             return gender;
         }
