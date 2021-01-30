@@ -13,14 +13,16 @@ namespace Game.Fight
 
         public static string Startup(string enemyName, double enemyHealth, int enemySpeed, int enemyShield)
         {
-            string choice;
+
+            string choice = "default";
             bool isGood;
             Console.WriteLine(enemyName + "wants  to fight you!");
-            Console.WriteLine("Possible choices: fight, info, talk, run");
-            Console.Write("What do you do:");
-            choice = Console.ReadLine().ToLower();
             do
             {
+                Console.WriteLine("Possible choices: fight, info, talk, run");
+                Console.Write("What do you do:");
+                choice = Console.ReadLine().ToLower();
+
                 switch (choice)
                 {
                     case "fight":
@@ -62,6 +64,7 @@ namespace Game.Fight
             Console.WriteLine("Health: " + enemyHealth);
             Console.WriteLine("Speed: " + enemySpeed);
             Console.WriteLine("Shield: " + enemyShield);
+            Console.WriteLine("");
         }
     }
 }

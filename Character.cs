@@ -48,10 +48,11 @@ namespace Game.Character
             string gender = "default";
             string Fgender;
             bool isGood;
-            Console.Write("Male or Female: ");
-            Fgender = Console.ReadLine().ToLower();
             do
             {
+                Console.Write("Male or Female: ");
+                Fgender = Console.ReadLine().ToLower();
+
                 switch (Fgender)
                 {
                     case "male":
@@ -67,6 +68,12 @@ namespace Game.Character
                     default:
                         isGood = false;
                         Console.WriteLine("Invalid answer");
+                        for (int i = 0; i < 3; i++)
+                        {
+                            Thread.Sleep(1);
+                            Console.Beep();
+                        }
+                        Thread.Sleep(750);
                         break;
                 }
             } while (isGood == false);
@@ -76,10 +83,28 @@ namespace Game.Character
 
         public static int Age()
         {
-            int age;
-            Console.Write("Age: ");
-            age = Convert.ToInt32(Console.ReadLine());
-
+            int age = 0;
+            bool isGood;
+            do
+            {
+                try
+                {
+                    Console.Write("Age: ");
+                    age = Convert.ToInt32(Console.ReadLine());
+                    isGood = true;
+                }
+                catch (FormatException)
+                {
+                    Console.WriteLine("Must be a number!");
+                    isGood = false;
+                }
+                catch (OverflowException)
+                {
+                    Console.WriteLine("You are not THAT old, are you?");
+                    isGood = false;
+                }
+            } while (isGood == false);
+            
             return age;
         }
 

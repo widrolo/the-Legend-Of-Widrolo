@@ -33,7 +33,7 @@ namespace ConsoleW_Engine
 
             //chapter 1
 
-            Chapter1.Manager(character.gender);
+            //Chapter1.Manager(character.gender);
 
             //end
 
