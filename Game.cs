@@ -11,7 +11,7 @@ namespace ConsoleW_Engine
     {
         static void Main()
         {
-            VCharacter character;
+            
             //startup
             string gameName = "Game";
             string company = "Widrolo Games";
@@ -24,20 +24,27 @@ namespace ConsoleW_Engine
             Console.WriteLine("Create your character");
             Console.WriteLine("");
 
-            character.firstName = Character.FirstName();
-            character.lastName = Character.LastName();
-            character.gender = Character.Gender();
-            character.age = Character.Age();
+            string firstName = Character.FirstName();
+            string lastName = Character.LastName();
+            string gender = Character.Gender();
+            int age = Character.Age();
 
-            Character.Manager(character.firstName, character.lastName, character.gender, character.age);
+            //player stats
+
+            int playerHealth = 100;
+            int playerStrength = 15;
+            int playerCharisma = 4;
+            int playerSpeed = 6;
+
+            Character.Manager(firstName, lastName, gender, age);
 
             //chapter 1
 
-            //Chapter1.Manager(character.gender);
+            //Chapter1.Manager(gender);
 
             //end
 
-            Fight.Manager("John", 100, 10, 15);
+            Fight.Manager("John", 100, 10, 15, 8, 5, playerCharisma, playerSpeed);
 
             Console.WriteLine("This is the end of the demo");
 

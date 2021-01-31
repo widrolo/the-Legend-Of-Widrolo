@@ -76,7 +76,7 @@ namespace Game.Chapter.one
             //int timeout = 9999999;
             bool isGood;
 
-            Console.WriteLine("You are hungry and you have go go to the toilet");
+            Console.WriteLine("You are hungry and you have go to the toilet");
             Thread.Sleep(2000);
             do
             {

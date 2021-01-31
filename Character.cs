@@ -5,13 +5,6 @@ using System.Threading;
 
 namespace Game.Character
 {
-    public struct VCharacter
-    {
-        public string firstName;
-        public string lastName;
-        public string gender;
-        public int age;
-    }
 
     public class Character
     {
@@ -96,11 +89,21 @@ namespace Game.Character
                 catch (FormatException)
                 {
                     Console.WriteLine("Must be a number!");
+                    for (int i = 0; i < 3; i++)
+                    {
+                        Thread.Sleep(1);
+                        Console.Beep();
+                    }
                     isGood = false;
                 }
                 catch (OverflowException)
                 {
                     Console.WriteLine("You are not THAT old, are you?");
+                    for (int i = 0; i < 3; i++)
+                    {
+                        Thread.Sleep(1);
+                        Console.Beep();
+                    }
                     isGood = false;
                 }
             } while (isGood == false);
